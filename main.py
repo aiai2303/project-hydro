@@ -11,17 +11,6 @@ async def basic(c, m):
     await m.reply_chat_action(ChatAction.TYPING)
     await m.reply("Hello, __--Welcome to Unofficial Google AI--__", quote=True)
     
-@app.on_message((filters.mentioned | filters.private) & filters.text)
-async def pro_model(c, m):
-    await m.reply_chat_action(ChatAction.TYPING)
-    if m.text.startswith("@"):
-        text = m.text.split(" ", 1)[1]
-    else:
-        text = m.text
-    res = pro(text)
-    await m.reply_chat_action(ChatAction.TYPING)
-    await m.reply(res, quote=True)
-    
 def photo_message(_, __, m):
     return m.reply_to_message and m.reply_to_message.photo
     
@@ -41,6 +30,17 @@ async def pro_vision_model(c, m):
     if text.startswith("@"):
         text = text.split(" ", 1)[1]
     res = pro_vision(photo, text)
+    await m.reply_chat_action(ChatAction.TYPING)
+    await m.reply(res, quote=True)
+    
+@app.on_message((filters.mentioned | filters.private) & filters.text)
+async def pro_model(c, m):
+    await m.reply_chat_action(ChatAction.TYPING)
+    if m.text.startswith("@"):
+        text = m.text.split(" ", 1)[1]
+    else:
+        text = m.text
+    res = pro(text)
     await m.reply_chat_action(ChatAction.TYPING)
     await m.reply(res, quote=True)
     
