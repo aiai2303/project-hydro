@@ -31,9 +31,12 @@ async def pro_vision_model(c, m):
         text = "Phân tích ảnh này"
     if text.startswith("@"):
         text = text.split(" ", 1)[1]
-    res = pro_vision(photo, text)
-    await m.reply_chat_action(ChatAction.TYPING)
-    await m.reply(res, quote=True)
+    try:
+        res = pro_vision(photo, text)
+        await m.reply_chat_action(ChatAction.TYPING)
+        await m.reply(res, quote=True)
+    except Exception as e:
+        await m.reply(str(e), quote=True)
     
 @app.on_message((filters.mentioned | filters.private) & filters.text)
 async def pro_model(c, m):
@@ -42,8 +45,11 @@ async def pro_model(c, m):
         text = m.text.split(" ", 1)[1]
     else:
         text = m.text
-    res = pro(text)
-    await m.reply_chat_action(ChatAction.TYPING)
-    await m.reply(res, quote=True)
+    try:
+        res = pro(text)
+        await m.reply_chat_action(ChatAction.TYPING)
+        await m.reply(res, quote=True)
+    except Exception as e:
+        await m.reply(str(e), quote=True)
     
 app.run()
