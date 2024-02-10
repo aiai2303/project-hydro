@@ -7,14 +7,14 @@ $ pip install google-generativeai
 from environ import google_api
 import google.generativeai as genai
 
-genai.configure(api_key="YOUR_API_KEY")
+genai.configure(api_key=google_api)
 
 # Set up the model
 generation_config = {
   "temperature": 1,
   "top_p": 1,
   "top_k": 1,
-  "max_output_tokens": 2048,
+  "max_output_tokens": 4096,
 }
 
 safety_settings = [
