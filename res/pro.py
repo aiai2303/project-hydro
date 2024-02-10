@@ -41,4 +41,4 @@ chat = model.start_chat(history=[])
 
 def pro(text):
     response = chat.send_message(text)
-    return response
+    return response.text
