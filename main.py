@@ -22,7 +22,10 @@ async def pro_model(c, m):
     await m.reply_chat_action(ChatAction.TYPING)
     await m.reply(res, quote=True)
     
-@app.on_message((filters.mentioned | filters.private) & filters.photo)
+def photo_message(_, __, m):
+    return m.reply_to_message.photo
+    
+@app.on_message((filters.mentioned | filters.private) & (filters.photo | filters.create(photo_message)))
 async def pro_vision_model(c, m):
     await m.reply_chat_action(ChatAction.TYPING)
     try:
