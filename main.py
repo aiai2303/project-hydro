@@ -24,6 +24,6 @@ async def chatting(c, m):
         text = m.text
     await m.reply_chat_action(ChatAction.TYPING)
     res = chat.send_message(text)
-    await m.reply(res, quote=True)
+    await m.reply(res.text, quote=True)
     
 app.run()
