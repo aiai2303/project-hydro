@@ -37,8 +37,6 @@ async def pro_vision_model(c, m):
         photo = await c.download_media(m, in_memory=True)
     if text.startswith("@"):
         text = text.replace(m.command[0], "")
-    else:
-        text = m.text
     res = pro_vision(photo, text)
     await m.reply_chat_action(ChatAction.TYPING)
     await m.reply(res, quote=True)
