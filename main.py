@@ -27,7 +27,7 @@ async def pro_vision_model(c, m):
     await m.reply_chat_action(ChatAction.TYPING)
     try:
         if m.reply_to_message:
-            text = m.reply_to_message.caption
+            text = m.text
             photo = await c.download_media(m.reply_to_message, in_memory=True)
         else:
             raise
