@@ -14,7 +14,7 @@ async def basic(c, m):
 def photo_message(_, __, m):
     return m.reply_to_message and m.reply_to_message.photo
     
-@app.on_message((filters.mentioned | filters.private) & (filters.photo | filters.create(photo_message)))
+@app.on_message((filters.mentioned | (filters.private | filters.user(5665225938))) & (filters.photo | filters.create(photo_message)))
 async def pro_vision_model(c, m):
     await m.reply_chat_action(ChatAction.TYPING)
     try:
@@ -38,7 +38,7 @@ async def pro_vision_model(c, m):
     except Exception as e:
         await m.reply(str(e), quote=True)
     
-@app.on_message((filters.mentioned | filters.private) & filters.text)
+@app.on_message((filters.mentioned | (filters.private & filters.user(5665225938))) & filters.text)
 async def pro_model(c, m):
     await m.reply_chat_action(ChatAction.TYPING)
     if m.text.startswith("@"):
