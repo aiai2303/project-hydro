@@ -18,8 +18,12 @@ async def basic(c, m):
     
 @app.on_message(filters.mentioned | filters.private)
 async def chatting(c, m):
+    if m.text.startswith("@"):
+        text = m.text.split(m.command[0])
+    else:
+        text = m.text
     await m.reply_chat_action(ChatAction.TYPING)
-    convo.send_message(m.text)
+    convo.send_message(text)
     res = convo.last.text
     await m.reply(res, quote=True)
     
