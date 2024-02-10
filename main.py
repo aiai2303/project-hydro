@@ -15,7 +15,7 @@ async def basic(c, m):
 async def pro_model(c, m):
     await m.reply_chat_action(ChatAction.TYPING)
     if m.text.startswith("@"):
-        text = m.text.split(m.command[0])
+        text = m.text.split(" ", 1)[1]
     else:
         text = m.text
     res = pro(text)
