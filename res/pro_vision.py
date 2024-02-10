@@ -40,7 +40,7 @@ model = genai.GenerativeModel(model_name="gemini-pro-vision", generation_config=
 def pro_vision(image, text):
     if not text:
         text = "Hình ảnh này có gì"
-    image_set = {"mime_type": "image/png", "data": image}
+    image_set = {"mime_type": "image/png", "data": image.getvalue()}
     prompt_parts = [text+"\n", image_set,]
     response = model.generate_content(prompt_parts)
     return response.text
