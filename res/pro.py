@@ -36,8 +36,9 @@ safety_settings = [
   },
 ]
 
+model = genai.GenerativeModel(model_name="gemini-pro", generation_config=generation_config, safety_settings=safety_settings)
+chat = model.start_chat(history=[])
+
 def pro(text):
-    model = genai.GenerativeModel(model_name="gemini-pro", generation_config=generation_config, safety_settings=safety_settings)
-    chat = model.start_chat(history=[])
     response = chat.send_message(text)
     return response
