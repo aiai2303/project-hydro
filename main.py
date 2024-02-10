@@ -27,6 +27,8 @@ async def pro_vision_model(c, m):
         print(e)
         text = m.caption
         photo = await c.download_media(m, in_memory=True)
+    if not text:
+        text = "Phân tích ảnh này"
     if text.startswith("@"):
         text = text.split(" ", 1)[1]
     res = pro_vision(photo, text)
