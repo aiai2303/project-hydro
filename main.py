@@ -8,7 +8,7 @@ import os
 app = Client("Google AI", api_id, api_hash, bot_token=bot_token, in_memory=True)
 genai.configure(api_key=google_api)
 model = genai.GenerativeModel(model_name="gemini-pro", generation_config=generation_config, safety_settings=safety_settings)
-convo = model.start_chat(history=[
+chat = model.start_chat(history=[
 ])
 
 @app.on_message(filters.command(["start","help"]) & filters.private)
@@ -23,8 +23,7 @@ async def chatting(c, m):
     else:
         text = m.text
     await m.reply_chat_action(ChatAction.TYPING)
-    convo.send_message(text)
-    res = convo.last.text
+    res = chat.send_message(text)
     await m.reply(res, quote=True)
     
 app.run()
