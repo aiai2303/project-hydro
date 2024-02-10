@@ -35,7 +35,7 @@ safety_settings = [
   },
 ]
 
-def vision(image, text):
+def pro_vision(image, text):
     model = genai.GenerativeModel(model_name="gemini-pro-vision", generation_config=generation_config, safety_settings=safety_settings)
     image_parts = [{"mime_type": "image/png", "data": image},]
     prompt_parts = [text, image_parts[0],]
