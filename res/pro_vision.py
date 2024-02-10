@@ -38,7 +38,9 @@ safety_settings = [
 model = genai.GenerativeModel(model_name="gemini-pro-vision", generation_config=generation_config, safety_settings=safety_settings)
 
 def pro_vision(image, text):
+    if not text:
+        text = "Hình ảnh này có gì"
     image_set = {"mime_type": "image/png", "data": image}
-    prompt_parts = [text, image_set,]
+    prompt_parts = [text+"\n", image_set,]
     response = model.generate_content(prompt_parts)
     return response.text
