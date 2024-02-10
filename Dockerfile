@@ -4,6 +4,8 @@ RUN useradd -m -u 1000 user
 
 COPY . /home/user
 
+WORKDIR /home/user
+
 RUN pip install -r requirements.txt
 
 RUN chown -R user:user /home/user
