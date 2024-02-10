@@ -23,7 +23,7 @@ async def pro_model(c, m):
     await m.reply(res, quote=True)
     
 def photo_message(_, __, m):
-    return m.reply_to_message.photo
+    return m.reply_to_message and m.reply_to_message.photo
     
 @app.on_message((filters.mentioned | filters.private) & (filters.photo | filters.create(photo_message)))
 async def pro_vision_model(c, m):
