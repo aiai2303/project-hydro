@@ -1,3 +1,4 @@
 hydrogram
 requests
 google-generativeai
+tgcrypto
