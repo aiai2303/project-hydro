@@ -1,18 +1,19 @@
 from hydrogram import Client, filters
-from environ import api_id, api_hash, bot_token
+from environ import session
 from hydrogram.enums import ChatAction
 from res import pro, pro_vision
 import os, sys
 
-app = Client("Google AI", api_id, api_hash, bot_token=bot_token, in_memory=True)
+app = Client("Google AI", session_string=session)
 
-@app.on_message(filters.command(["start","help"]) & filters.private)
+#@app.on_message(filters.command(["start","help"]) & filters.private)
 async def basic(c, m):
     await m.reply_chat_action(ChatAction.TYPING)
     await m.reply("Hello, __--Welcome to Unofficial Google AI--__", quote=True)
     
 @app.on_message(filters.command("refresh") & filters.user(5665225938))
 def refresh_chat(c, m):
+    m.delete()
     os.execl(sys.executable, sys.executable, *sys.argv)
     
 def photo_message(_, __, m):
