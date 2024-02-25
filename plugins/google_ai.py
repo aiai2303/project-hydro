@@ -2,7 +2,7 @@ from hydrogram import Client, filters
 from hydrogram.enums import ChatAction
 from res import pro, pro_vision, reset
 
-@Client.on_message(filters.command("refresh") & filters.user(5665225938))
+@Client.on_message(filters.command("new"))
 def refresh_chat(c, m):
     m.delete()
     reset()
