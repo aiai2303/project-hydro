@@ -42,3 +42,7 @@ chat = model.start_chat(history=[])
 def pro(text):
     response = chat.send_message(text)
     return response.text
+    
+def reset():
+    global chat
+    chat = model.start_chat(history=[])
