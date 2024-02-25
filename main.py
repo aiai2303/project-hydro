@@ -4,7 +4,7 @@ from hydrogram.enums import ChatAction
 from res import pro, pro_vision
 import os, sys
 
-app = Client("Google AI", session_string=session)
+app = Client("Google AI", session_string=session, plugins=dict(root='plugins'))
 
 #@app.on_message(filters.command(["start","help"]) & filters.private)
 async def basic(c, m):
