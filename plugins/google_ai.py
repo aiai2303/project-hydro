@@ -36,7 +36,7 @@ async def pro_vision_model(c, m):
         await m.reply(str(e), quote=True)
         
 def _user_(_, __, m):
-    return len(m.from_user.id) > 6
+    return len(str(m.from_user.id)) > 6
     
 @Client.on_message((filters.mentioned | filters.private) & filters.text & filters.create(_user_) & filters.incoming)
 async def pro_model(c, m):
