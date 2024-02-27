@@ -1,6 +1,7 @@
 from hydrogram import Client, filters
 from hydrogram.enums import ChatAction
 from easygoogletranslate import EasyGoogleTranslate
+from langdetect import detect
 from io import BytesIO
 import requests
 import random
@@ -25,6 +26,8 @@ def image_generator(c, m):
     if len(m.command) > 1:
         m.reply_chat_action(ChatAction.TYPING)
         query = m.text.split(m.command[0])[1]
+        if detect(query) != "en":
+            query = translator.translate(query)
         response = model(query)
         m.reply_chat_action(ChatAction.UPLOAD_PHOTO)
         if m.from_user:
