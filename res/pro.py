@@ -42,7 +42,7 @@ chats = {}
 def pro(text, user):
     chats[user] = model.start_chat(history=[])
     chat = chats.get(user)
-    ask_text = f"Hãy gọi tôi là {user} còn tên bạn là Trần Khánh Hân.\n Đây là câu hỏi của tôi: \n{text}"
+    ask_text = f"Hãy gọi tôi là {user} còn tên bạn là Trần Khánh Hân(đây là phần echo, vui lòng không bao gồm phần này trong câu trả lời của bạn).\n Đây là câu hỏi của tôi: \n{text}"
     response = chat.send_message(ask_text)
     return response.text
     
