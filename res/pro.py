@@ -42,7 +42,8 @@ chats = {}
 def pro(text, user):
     chats[user] = model.start_chat(history=[])
     chat = chats.get(user)
-    response = chat.send_message(text)
+    ask_text = f"Tên tôi là {user}.\n {text}"
+    response = chat.send_message(ask_text)
     return response.text
     
 def reset():
