@@ -5,3 +5,4 @@ tgcrypto
 Flask
 gunicorn
 easygoogletranslate
+langdetect
