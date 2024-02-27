@@ -45,8 +45,12 @@ async def pro_model(c, m):
         text = m.text.split(" ", 1)[1]
     else:
         text = m.text
+    if m.from_user:
+        user = m.from_user.first_name
+    else:
+        user = m.sender_chat.title
     try:
-        res = pro(text)
+        res = pro(text, user)
         await m.reply_chat_action(ChatAction.TYPING)
         await m.reply(res, quote=True)
     except Exception as e:
