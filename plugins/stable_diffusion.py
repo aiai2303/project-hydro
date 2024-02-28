@@ -20,7 +20,7 @@ def polli(query):
     response = requests.get("https://image.pollinations.ai/prompt/" + query)
     return response
 
-@Client.on_message(filters.command("image"))
+@Client.on_message(filters.command("image") & filters.incoming)
 def image_generator(c, m):
     model = random.choice([diff, polli])
     if len(m.command) > 1:
