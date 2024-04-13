@@ -1,4 +1,4 @@
 #!/usr/bin/bash
 
-gunicorn -b 0.0.0.0:7860 web:app &
+gunicorn -b 0.0.0.0:8080 web:app &
 python -u main.py
