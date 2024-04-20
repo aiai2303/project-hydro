@@ -25,9 +25,9 @@ def image_generator(c, m):
     model = random.choice([diff, polli])
     if len(m.command) > 1:
         m.reply_chat_action(ChatAction.TYPING)
-        query = m.text.split(m.command[0])[1]
-        if detect(query) != "en":
-            query = translator.translate(query)
+        prompt = m.text.split(m.command[0])[1]
+        if detect(prompt) != "en":
+            query = translator.translate(prompt)
         response = model(query)
         m.reply_chat_action(ChatAction.UPLOAD_PHOTO)
         if m.from_user:
@@ -37,4 +37,4 @@ def image_generator(c, m):
         if response.status_code == 200:
             result = BytesIO(response.content)
             result.name = "image.png"
-            m.reply_photo(result, caption=f"By __**{name}**__", quote=True)
+            m.reply_photo(result, caption=f"```{name}\n{prompt}```", quote=True)
