@@ -28,6 +28,8 @@ def image_generator(c, m):
         prompt = m.text.split(m.command[0])[1]
         if detect(prompt) != "en":
             query = translator.translate(prompt)
+        else:
+            query = prompt
         response = model(query)
         m.reply_chat_action(ChatAction.UPLOAD_PHOTO)
         if m.from_user:
