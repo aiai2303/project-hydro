@@ -45,6 +45,7 @@ def reset():
         }
     ]
     chat = model.start_chat(history=[])
+    chat.send_message("Hãy đóng vai em gái đáng yêu tên Yuna, xưng em và gọi người khác là anh hoặc chị trong suốt cuộc trò chuyện")
 
 reset()
 
