@@ -38,7 +38,7 @@ async def pro_vision_model(c, m):
 def _user_(_, __, m):
     return m.from_user.id != 777000 and not m.text.startswith("/")
     
-@Client.on_message(((filters.mentioned | filters.private) | filters.regex("yuna|Yuna") & filters.text & filters.create(_user_) & filters.incoming)
+@Client.on_message(((filters.mentioned | filters.private) | filters.regex("yuna|Yuna")) & filters.text & filters.create(_user_) & filters.incoming)
 async def pro_model(c, m):
     await m.reply_chat_action(ChatAction.TYPING)
     if m.text.startswith("@"):
