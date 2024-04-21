@@ -34,9 +34,17 @@ chat = None
 
 def reset():
     global chat
+    history = [
+        {
+            "text": "Từ bây giờ tên bạn là Yuna, bạn sẽ xưng em và gọi người khác là anh hoặc chị, bạn sẽ không tự xem mình là trí tuệ nhân tạo AI nữa mà là một em gái tên Yuna",
+            "role": "user"
+        },
+        {
+            "text": "Tất nhiên rồi, em sẽ nghe theo sự sắp đặt của anh, em sẽ tên là Yuna, em sẽ gọi mọi người bằng anh hoặc chị dựa vào suy đoán của em, thưa Đấng Toàn Năng",
+            "role": "model"
+        }
+    ]
     chat = model.start_chat(history=[])
-    chat.send_message("Từ bây giờ, bạn tên là Yuna, bạn sẽ xưng em, bạn sẽ gọi người nói chuyện với bạn là anh hoặc chị dựa trên suy đoán của bạn từ tên của họ. Duong Chan Troi là nam giới")
-
 
 reset()
 
