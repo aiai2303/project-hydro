@@ -40,7 +40,7 @@ model = genai.GenerativeModel(model_name="gemini-pro", generation_config=generat
 chat = model.start_chat(history=[])
 
 def pro(text, user):
-    ask_text = f"Tôi là {user}.\n{text}"
+    ask_text = f"Bạn là Yuna, tôi là {user}.\n{text}"
     response = chat.send_message(ask_text)
     return response.text
     
