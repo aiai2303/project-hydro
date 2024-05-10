@@ -1,0 +1,415 @@
+[
+    {
+        "label": "Client",
+        "importPath": "hydrogram",
+        "description": "hydrogram",
+        "isExtraImport": true,
+        "detail": "hydrogram",
+        "documentation": {}
+    },
+    {
+        "label": "filters",
+        "importPath": "hydrogram",
+        "description": "hydrogram",
+        "isExtraImport": true,
+        "detail": "hydrogram",
+        "documentation": {}
+    },
+    {
+        "label": "Client",
+        "importPath": "hydrogram",
+        "description": "hydrogram",
+        "isExtraImport": true,
+        "detail": "hydrogram",
+        "documentation": {}
+    },
+    {
+        "label": "filters",
+        "importPath": "hydrogram",
+        "description": "hydrogram",
+        "isExtraImport": true,
+        "detail": "hydrogram",
+        "documentation": {}
+    },
+    {
+        "label": "Client",
+        "importPath": "hydrogram",
+        "description": "hydrogram",
+        "isExtraImport": true,
+        "detail": "hydrogram",
+        "documentation": {}
+    },
+    {
+        "label": "ChatAction",
+        "importPath": "hydrogram.enums",
+        "description": "hydrogram.enums",
+        "isExtraImport": true,
+        "detail": "hydrogram.enums",
+        "documentation": {}
+    },
+    {
+        "label": "ChatAction",
+        "importPath": "hydrogram.enums",
+        "description": "hydrogram.enums",
+        "isExtraImport": true,
+        "detail": "hydrogram.enums",
+        "documentation": {}
+    },
+    {
+        "label": "pro",
+        "importPath": "res",
+        "description": "res",
+        "isExtraImport": true,
+        "detail": "res",
+        "documentation": {}
+    },
+    {
+        "label": "pro_vision",
+        "importPath": "res",
+        "description": "res",
+        "isExtraImport": true,
+        "detail": "res",
+        "documentation": {}
+    },
+    {
+        "label": "reset",
+        "importPath": "res",
+        "description": "res",
+        "isExtraImport": true,
+        "detail": "res",
+        "documentation": {}
+    },
+    {
+        "label": "EasyGoogleTranslate",
+        "importPath": "easygoogletranslate",
+        "description": "easygoogletranslate",
+        "isExtraImport": true,
+        "detail": "easygoogletranslate",
+        "documentation": {}
+    },
+    {
+        "label": "detect",
+        "importPath": "langdetect",
+        "description": "langdetect",
+        "isExtraImport": true,
+        "detail": "langdetect",
+        "documentation": {}
+    },
+    {
+        "label": "BytesIO",
+        "importPath": "io",
+        "description": "io",
+        "isExtraImport": true,
+        "detail": "io",
+        "documentation": {}
+    },
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "google_api",
+        "importPath": "environ",
+        "description": "environ",
+        "isExtraImport": true,
+        "detail": "environ",
+        "documentation": {}
+    },
+    {
+        "label": "google_api",
+        "importPath": "environ",
+        "description": "environ",
+        "isExtraImport": true,
+        "detail": "environ",
+        "documentation": {}
+    },
+    {
+        "label": "api_id",
+        "importPath": "environ",
+        "description": "environ",
+        "isExtraImport": true,
+        "detail": "environ",
+        "documentation": {}
+    },
+    {
+        "label": "api_hash",
+        "importPath": "environ",
+        "description": "environ",
+        "isExtraImport": true,
+        "detail": "environ",
+        "documentation": {}
+    },
+    {
+        "label": "bot_token",
+        "importPath": "environ",
+        "description": "environ",
+        "isExtraImport": true,
+        "detail": "environ",
+        "documentation": {}
+    },
+    {
+        "label": "google.generativeai",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "google.generativeai",
+        "description": "google.generativeai",
+        "detail": "google.generativeai",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "refresh_chat",
+        "kind": 2,
+        "importPath": "plugins.google_ai",
+        "description": "plugins.google_ai",
+        "peekOfCode": "def refresh_chat(c, m):\n    m.delete()\n    reset()\n    m.delete()\ndef photo_message(_, __, m):\n    return m.reply_to_message and m.reply_to_message.photo\n@Client.on_message(\n    (filters.mentioned | filters.private)\n    & (filters.photo | filters.create(photo_message))\n    & filters.incoming",
+        "detail": "plugins.google_ai",
+        "documentation": {}
+    },
+    {
+        "label": "photo_message",
+        "kind": 2,
+        "importPath": "plugins.google_ai",
+        "description": "plugins.google_ai",
+        "peekOfCode": "def photo_message(_, __, m):\n    return m.reply_to_message and m.reply_to_message.photo\n@Client.on_message(\n    (filters.mentioned | filters.private)\n    & (filters.photo | filters.create(photo_message))\n    & filters.incoming\n)\nasync def pro_vision_model(c, m):\n    await m.reply_chat_action(ChatAction.TYPING)\n    try:",
+        "detail": "plugins.google_ai",
+        "documentation": {}
+    },
+    {
+        "label": "diff",
+        "kind": 2,
+        "importPath": "plugins.stable_diffusion",
+        "description": "plugins.stable_diffusion",
+        "peekOfCode": "def diff(query):\n    response = requests.get(\"https://diffusion.cloudlapse.workers.dev/\", params=dict(q=query))\n    return response\ndef polli(query):\n    response = requests.get(\"https://image.pollinations.ai/prompt/\" + query)\n    return response\n@Client.on_message(filters.command(\"image\") & filters.incoming)\ndef image_generator(c, m):\n    model = random.choice([diff, polli])\n    if len(m.command) > 1:",
+        "detail": "plugins.stable_diffusion",
+        "documentation": {}
+    },
+    {
+        "label": "polli",
+        "kind": 2,
+        "importPath": "plugins.stable_diffusion",
+        "description": "plugins.stable_diffusion",
+        "peekOfCode": "def polli(query):\n    response = requests.get(\"https://image.pollinations.ai/prompt/\" + query)\n    return response\n@Client.on_message(filters.command(\"image\") & filters.incoming)\ndef image_generator(c, m):\n    model = random.choice([diff, polli])\n    if len(m.command) > 1:\n        m.reply_chat_action(ChatAction.TYPING)\n        prompt = m.text.split(m.command[0])[1]\n        if detect(prompt) != \"en\":",
+        "detail": "plugins.stable_diffusion",
+        "documentation": {}
+    },
+    {
+        "label": "image_generator",
+        "kind": 2,
+        "importPath": "plugins.stable_diffusion",
+        "description": "plugins.stable_diffusion",
+        "peekOfCode": "def image_generator(c, m):\n    model = random.choice([diff, polli])\n    if len(m.command) > 1:\n        m.reply_chat_action(ChatAction.TYPING)\n        prompt = m.text.split(m.command[0])[1]\n        if detect(prompt) != \"en\":\n            query = translator.translate(prompt)\n        else:\n            query = prompt\n        response = model(query)",
+        "detail": "plugins.stable_diffusion",
+        "documentation": {}
+    },
+    {
+        "label": "translator",
+        "kind": 5,
+        "importPath": "plugins.stable_diffusion",
+        "description": "plugins.stable_diffusion",
+        "peekOfCode": "translator = EasyGoogleTranslate(\n    source_language='vi',\n    target_language='en',\n    timeout=30\n)\ndef diff(query):\n    response = requests.get(\"https://diffusion.cloudlapse.workers.dev/\", params=dict(q=query))\n    return response\ndef polli(query):\n    response = requests.get(\"https://image.pollinations.ai/prompt/\" + query)",
+        "detail": "plugins.stable_diffusion",
+        "documentation": {}
+    },
+    {
+        "label": "reset",
+        "kind": 2,
+        "importPath": "res.pro",
+        "description": "res.pro",
+        "peekOfCode": "def reset():\n    global chat\n    chat = model.start_chat(history=[])\n    chat.send_message(\"Từ bây giờ bạn tên là Trần Khánh My\")\nreset()\ndef pro(text, user):\n    ask_text = f\"Tôi là {user}.\\n{text}\"\n    response = chat.send_message(ask_text)\n    return response.text",
+        "detail": "res.pro",
+        "documentation": {}
+    },
+    {
+        "label": "pro",
+        "kind": 2,
+        "importPath": "res.pro",
+        "description": "res.pro",
+        "peekOfCode": "def pro(text, user):\n    ask_text = f\"Tôi là {user}.\\n{text}\"\n    response = chat.send_message(ask_text)\n    return response.text",
+        "detail": "res.pro",
+        "documentation": {}
+    },
+    {
+        "label": "generation_config",
+        "kind": 5,
+        "importPath": "res.pro",
+        "description": "res.pro",
+        "peekOfCode": "generation_config = {\n    \"temperature\": 1,\n    \"top_p\": 1,\n    \"top_k\": 1,\n    \"max_output_tokens\": 4096,\n}\nsafety_settings = [\n    {\"category\": \"HARM_CATEGORY_HARASSMENT\", \"threshold\": \"BLOCK_ONLY_HIGH\"},\n    {\"category\": \"HARM_CATEGORY_HATE_SPEECH\", \"threshold\": \"BLOCK_ONLY_HIGH\"},\n    {\"category\": \"HARM_CATEGORY_SEXUALLY_EXPLICIT\", \"threshold\": \"BLOCK_ONLY_HIGH\"},",
+        "detail": "res.pro",
+        "documentation": {}
+    },
+    {
+        "label": "safety_settings",
+        "kind": 5,
+        "importPath": "res.pro",
+        "description": "res.pro",
+        "peekOfCode": "safety_settings = [\n    {\"category\": \"HARM_CATEGORY_HARASSMENT\", \"threshold\": \"BLOCK_ONLY_HIGH\"},\n    {\"category\": \"HARM_CATEGORY_HATE_SPEECH\", \"threshold\": \"BLOCK_ONLY_HIGH\"},\n    {\"category\": \"HARM_CATEGORY_SEXUALLY_EXPLICIT\", \"threshold\": \"BLOCK_ONLY_HIGH\"},\n    {\"category\": \"HARM_CATEGORY_DANGEROUS_CONTENT\", \"threshold\": \"BLOCK_ONLY_HIGH\"},\n]\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-pro\",\n    generation_config=generation_config,\n    safety_settings=safety_settings,",
+        "detail": "res.pro",
+        "documentation": {}
+    },
+    {
+        "label": "model",
+        "kind": 5,
+        "importPath": "res.pro",
+        "description": "res.pro",
+        "peekOfCode": "model = genai.GenerativeModel(\n    model_name=\"gemini-pro\",\n    generation_config=generation_config,\n    safety_settings=safety_settings,\n)\nchat = None\ndef reset():\n    global chat\n    chat = model.start_chat(history=[])\n    chat.send_message(\"Từ bây giờ bạn tên là Trần Khánh My\")",
+        "detail": "res.pro",
+        "documentation": {}
+    },
+    {
+        "label": "chat",
+        "kind": 5,
+        "importPath": "res.pro",
+        "description": "res.pro",
+        "peekOfCode": "chat = None\ndef reset():\n    global chat\n    chat = model.start_chat(history=[])\n    chat.send_message(\"Từ bây giờ bạn tên là Trần Khánh My\")\nreset()\ndef pro(text, user):\n    ask_text = f\"Tôi là {user}.\\n{text}\"\n    response = chat.send_message(ask_text)\n    return response.text",
+        "detail": "res.pro",
+        "documentation": {}
+    },
+    {
+        "label": "pro_vision",
+        "kind": 2,
+        "importPath": "res.pro_vision",
+        "description": "res.pro_vision",
+        "peekOfCode": "def pro_vision(image, text):\n    image_set = {\"mime_type\": \"image/png\", \"data\": image.getvalue()}\n    prompt_parts = [text+\"\\n\", image_set,]\n    response = model.generate_content(prompt_parts)\n    return response.text",
+        "detail": "res.pro_vision",
+        "documentation": {}
+    },
+    {
+        "label": "generation_config",
+        "kind": 5,
+        "importPath": "res.pro_vision",
+        "description": "res.pro_vision",
+        "peekOfCode": "generation_config = {\n  \"temperature\": 1,\n  \"top_p\": 1,\n  \"top_k\": 32,\n  \"max_output_tokens\": 4096,\n}\nsafety_settings = [\n  {\n    \"category\": \"HARM_CATEGORY_HARASSMENT\",\n    \"threshold\": \"BLOCK_ONLY_HIGH\"",
+        "detail": "res.pro_vision",
+        "documentation": {}
+    },
+    {
+        "label": "safety_settings",
+        "kind": 5,
+        "importPath": "res.pro_vision",
+        "description": "res.pro_vision",
+        "peekOfCode": "safety_settings = [\n  {\n    \"category\": \"HARM_CATEGORY_HARASSMENT\",\n    \"threshold\": \"BLOCK_ONLY_HIGH\"\n  },\n  {\n    \"category\": \"HARM_CATEGORY_HATE_SPEECH\",\n    \"threshold\": \"BLOCK_ONLY_HIGH\"\n  },\n  {",
+        "detail": "res.pro_vision",
+        "documentation": {}
+    },
+    {
+        "label": "model",
+        "kind": 5,
+        "importPath": "res.pro_vision",
+        "description": "res.pro_vision",
+        "peekOfCode": "model = genai.GenerativeModel(model_name=\"gemini-pro-vision\", generation_config=generation_config, safety_settings=safety_settings)\ndef pro_vision(image, text):\n    image_set = {\"mime_type\": \"image/png\", \"data\": image.getvalue()}\n    prompt_parts = [text+\"\\n\", image_set,]\n    response = model.generate_content(prompt_parts)\n    return response.text",
+        "detail": "res.pro_vision",
+        "documentation": {}
+    },
+    {
+        "label": "SECRET",
+        "kind": 5,
+        "importPath": "environ",
+        "description": "environ",
+        "peekOfCode": "SECRET = os.getenv(\"SECRET\")\nres = requests.get(SECRET).json()\ngoogle_api = res[\"key\"][\"google_ai\"]\napi_id = res[\"key\"][\"api_id\"]\napi_hash = res[\"key\"][\"api_hash\"]\nbot_token = res[\"bot\"][\"ai_tg\"]",
+        "detail": "environ",
+        "documentation": {}
+    },
+    {
+        "label": "res",
+        "kind": 5,
+        "importPath": "environ",
+        "description": "environ",
+        "peekOfCode": "res = requests.get(SECRET).json()\ngoogle_api = res[\"key\"][\"google_ai\"]\napi_id = res[\"key\"][\"api_id\"]\napi_hash = res[\"key\"][\"api_hash\"]\nbot_token = res[\"bot\"][\"ai_tg\"]",
+        "detail": "environ",
+        "documentation": {}
+    },
+    {
+        "label": "google_api",
+        "kind": 5,
+        "importPath": "environ",
+        "description": "environ",
+        "peekOfCode": "google_api = res[\"key\"][\"google_ai\"]\napi_id = res[\"key\"][\"api_id\"]\napi_hash = res[\"key\"][\"api_hash\"]\nbot_token = res[\"bot\"][\"ai_tg\"]",
+        "detail": "environ",
+        "documentation": {}
+    },
+    {
+        "label": "api_id",
+        "kind": 5,
+        "importPath": "environ",
+        "description": "environ",
+        "peekOfCode": "api_id = res[\"key\"][\"api_id\"]\napi_hash = res[\"key\"][\"api_hash\"]\nbot_token = res[\"bot\"][\"ai_tg\"]",
+        "detail": "environ",
+        "documentation": {}
+    },
+    {
+        "label": "api_hash",
+        "kind": 5,
+        "importPath": "environ",
+        "description": "environ",
+        "peekOfCode": "api_hash = res[\"key\"][\"api_hash\"]\nbot_token = res[\"bot\"][\"ai_tg\"]",
+        "detail": "environ",
+        "documentation": {}
+    },
+    {
+        "label": "bot_token",
+        "kind": 5,
+        "importPath": "environ",
+        "description": "environ",
+        "peekOfCode": "bot_token = res[\"bot\"][\"ai_tg\"]",
+        "detail": "environ",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "app = Client(\"Google AI\", api_id, api_hash, bot_token=bot_token, plugins=dict(root='plugins'))\napp.run()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "home",
+        "kind": 2,
+        "importPath": "web",
+        "description": "web",
+        "peekOfCode": "def home():\n    return \"\"",
+        "detail": "web",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "web",
+        "description": "web",
+        "peekOfCode": "app = Flask(__name__)\n@app.route(\"/\")\ndef home():\n    return \"\"",
+        "detail": "web",
+        "documentation": {}
+    }
+]
