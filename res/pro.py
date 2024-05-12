@@ -35,7 +35,8 @@ chat = None
 def reset():
     global chat
     chat = model.start_chat(history=[])
-    chat.send_message("Từ bây giờ bạn tên là Trần Khánh My")
+    chat.send_message("Từ bây giờ bạn tên là Trần Khánh My trong mọi cuộc trò chuyện.")
+
 
 reset()
 

@@ -246,7 +246,7 @@
         "kind": 2,
         "importPath": "res.pro",
         "description": "res.pro",
-        "peekOfCode": "def reset():\n    global chat\n    chat = model.start_chat(history=[])\n    chat.send_message(\"Từ bây giờ bạn tên là Trần Khánh My\")\nreset()\ndef pro(text, user):\n    ask_text = f\"Tôi là {user}.\\n{text}\"\n    response = chat.send_message(ask_text)\n    return response.text",
+        "peekOfCode": "def reset():\n    global chat\n    chat = model.start_chat(history=[])\n    chat.send_message(\"Từ bây giờ bạn tên là Trần Khánh My trong mọi cuộc trò chuyện.\")\nreset()\ndef pro(text, user):\n    ask_text = f\"Tôi là {user}.\\n{text}\"\n    response = chat.send_message(ask_text)\n    return response.text",
         "detail": "res.pro",
         "documentation": {}
     },
@@ -282,7 +282,7 @@
         "kind": 5,
         "importPath": "res.pro",
         "description": "res.pro",
-        "peekOfCode": "model = genai.GenerativeModel(\n    model_name=\"gemini-pro\",\n    generation_config=generation_config,\n    safety_settings=safety_settings,\n)\nchat = None\ndef reset():\n    global chat\n    chat = model.start_chat(history=[])\n    chat.send_message(\"Từ bây giờ bạn tên là Trần Khánh My\")",
+        "peekOfCode": "model = genai.GenerativeModel(\n    model_name=\"gemini-pro\",\n    generation_config=generation_config,\n    safety_settings=safety_settings,\n)\nchat = None\ndef reset():\n    global chat\n    chat = model.start_chat(history=[])\n    chat.send_message(\"Từ bây giờ bạn tên là Trần Khánh My trong mọi cuộc trò chuyện.\")",
         "detail": "res.pro",
         "documentation": {}
     },
@@ -291,7 +291,7 @@
         "kind": 5,
         "importPath": "res.pro",
         "description": "res.pro",
-        "peekOfCode": "chat = None\ndef reset():\n    global chat\n    chat = model.start_chat(history=[])\n    chat.send_message(\"Từ bây giờ bạn tên là Trần Khánh My\")\nreset()\ndef pro(text, user):\n    ask_text = f\"Tôi là {user}.\\n{text}\"\n    response = chat.send_message(ask_text)\n    return response.text",
+        "peekOfCode": "chat = None\ndef reset():\n    global chat\n    chat = model.start_chat(history=[])\n    chat.send_message(\"Từ bây giờ bạn tên là Trần Khánh My trong mọi cuộc trò chuyện.\")\nreset()\ndef pro(text, user):\n    ask_text = f\"Tôi là {user}.\\n{text}\"\n    response = chat.send_message(ask_text)\n    return response.text",
         "detail": "res.pro",
         "documentation": {}
     },
