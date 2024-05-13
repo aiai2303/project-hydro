@@ -113,15 +113,6 @@
         "documentation": {}
     },
     {
-        "label": "random",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "random",
-        "description": "random",
-        "detail": "random",
-        "documentation": {}
-    },
-    {
         "label": "google_api",
         "importPath": "environ",
         "description": "environ",
@@ -210,16 +201,7 @@
         "kind": 2,
         "importPath": "plugins.stable_diffusion",
         "description": "plugins.stable_diffusion",
-        "peekOfCode": "def diff(query):\n    response = requests.get(\"https://diffusion.cloudlapse.workers.dev/\", params=dict(q=query))\n    return response\ndef polli(query):\n    response = requests.get(\"https://image.pollinations.ai/prompt/\" + query)\n    return response\n@Client.on_message(filters.command(\"image\") & filters.incoming)\ndef image_generator(c, m):\n    model = random.choice([diff, polli])\n    if len(m.command) > 1:",
-        "detail": "plugins.stable_diffusion",
-        "documentation": {}
-    },
-    {
-        "label": "polli",
-        "kind": 2,
-        "importPath": "plugins.stable_diffusion",
-        "description": "plugins.stable_diffusion",
-        "peekOfCode": "def polli(query):\n    response = requests.get(\"https://image.pollinations.ai/prompt/\" + query)\n    return response\n@Client.on_message(filters.command(\"image\") & filters.incoming)\ndef image_generator(c, m):\n    model = random.choice([diff, polli])\n    if len(m.command) > 1:\n        m.reply_chat_action(ChatAction.TYPING)\n        prompt = m.text.split(m.command[0])[1]\n        if detect(prompt) != \"en\":",
+        "peekOfCode": "def diff(query):\n    response = requests.get(\n        \"https://diffusion.cloudlapse.workers.dev/\", params=dict(q=query)\n    )\n    return response\n@Client.on_message(filters.command(\"image\") & filters.incoming)\ndef image_generator(c, m):\n    if len(m.command) > 1:\n        m.reply_chat_action(ChatAction.TYPING)\n        prompt = m.text.split(m.command[0])[1]",
         "detail": "plugins.stable_diffusion",
         "documentation": {}
     },
@@ -228,7 +210,7 @@
         "kind": 2,
         "importPath": "plugins.stable_diffusion",
         "description": "plugins.stable_diffusion",
-        "peekOfCode": "def image_generator(c, m):\n    model = random.choice([diff, polli])\n    if len(m.command) > 1:\n        m.reply_chat_action(ChatAction.TYPING)\n        prompt = m.text.split(m.command[0])[1]\n        if detect(prompt) != \"en\":\n            query = translator.translate(prompt)\n        else:\n            query = prompt\n        response = model(query)",
+        "peekOfCode": "def image_generator(c, m):\n    if len(m.command) > 1:\n        m.reply_chat_action(ChatAction.TYPING)\n        prompt = m.text.split(m.command[0])[1]\n        if detect(prompt) != \"en\":\n            query = translator.translate(prompt)\n        else:\n            query = prompt\n        response = diff(query)\n        m.reply_chat_action(ChatAction.UPLOAD_PHOTO)",
         "detail": "plugins.stable_diffusion",
         "documentation": {}
     },
@@ -237,7 +219,7 @@
         "kind": 5,
         "importPath": "plugins.stable_diffusion",
         "description": "plugins.stable_diffusion",
-        "peekOfCode": "translator = EasyGoogleTranslate(\n    source_language='vi',\n    target_language='en',\n    timeout=30\n)\ndef diff(query):\n    response = requests.get(\"https://diffusion.cloudlapse.workers.dev/\", params=dict(q=query))\n    return response\ndef polli(query):\n    response = requests.get(\"https://image.pollinations.ai/prompt/\" + query)",
+        "peekOfCode": "translator = EasyGoogleTranslate(source_language=\"vi\", target_language=\"en\", timeout=30)\ndef diff(query):\n    response = requests.get(\n        \"https://diffusion.cloudlapse.workers.dev/\", params=dict(q=query)\n    )\n    return response\n@Client.on_message(filters.command(\"image\") & filters.incoming)\ndef image_generator(c, m):\n    if len(m.command) > 1:\n        m.reply_chat_action(ChatAction.TYPING)",
         "detail": "plugins.stable_diffusion",
         "documentation": {}
     },
@@ -246,7 +228,7 @@
         "kind": 2,
         "importPath": "res.pro",
         "description": "res.pro",
-        "peekOfCode": "def reset():\n    global chat\n    chat = model.start_chat(history=[])\n    chat.send_message(\"Từ bây giờ bạn tên là Trần Khánh My trong mọi cuộc trò chuyện.\")\nreset()\ndef pro(text, user):\n    ask_text = f\"Tôi là {user}.\\n{text}\"\n    response = chat.send_message(ask_text)\n    return response.text",
+        "peekOfCode": "def reset():\n    global chat\n    chat = model.start_chat(history=[])\n    chat.send_message(\"Từ bây giờ bạn sẽ có tên là Trần Khánh Hân\")\nreset()\ndef pro(text, user):\n    ask_text = f\"Tôi là {user}.\\n{text}\"\n    response = chat.send_message(ask_text)\n    return response.text",
         "detail": "res.pro",
         "documentation": {}
     },
@@ -282,7 +264,7 @@
         "kind": 5,
         "importPath": "res.pro",
         "description": "res.pro",
-        "peekOfCode": "model = genai.GenerativeModel(\n    model_name=\"gemini-pro\",\n    generation_config=generation_config,\n    safety_settings=safety_settings,\n)\nchat = None\ndef reset():\n    global chat\n    chat = model.start_chat(history=[])\n    chat.send_message(\"Từ bây giờ bạn tên là Trần Khánh My trong mọi cuộc trò chuyện.\")",
+        "peekOfCode": "model = genai.GenerativeModel(\n    model_name=\"gemini-pro\",\n    generation_config=generation_config,\n    safety_settings=safety_settings,\n)\nchat = None\ndef reset():\n    global chat\n    chat = model.start_chat(history=[])\n    chat.send_message(\"Từ bây giờ bạn sẽ có tên là Trần Khánh Hân\")",
         "detail": "res.pro",
         "documentation": {}
     },
@@ -291,7 +273,7 @@
         "kind": 5,
         "importPath": "res.pro",
         "description": "res.pro",
-        "peekOfCode": "chat = None\ndef reset():\n    global chat\n    chat = model.start_chat(history=[])\n    chat.send_message(\"Từ bây giờ bạn tên là Trần Khánh My trong mọi cuộc trò chuyện.\")\nreset()\ndef pro(text, user):\n    ask_text = f\"Tôi là {user}.\\n{text}\"\n    response = chat.send_message(ask_text)\n    return response.text",
+        "peekOfCode": "chat = None\ndef reset():\n    global chat\n    chat = model.start_chat(history=[])\n    chat.send_message(\"Từ bây giờ bạn sẽ có tên là Trần Khánh Hân\")\nreset()\ndef pro(text, user):\n    ask_text = f\"Tôi là {user}.\\n{text}\"\n    response = chat.send_message(ask_text)\n    return response.text",
         "detail": "res.pro",
         "documentation": {}
     },
