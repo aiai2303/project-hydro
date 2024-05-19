@@ -1,19 +1,12 @@
-"""
-At the command line, only need to run once to install the package via pip:
-
-$ pip install google-generativeai
-"""
-
-from environ import google_api
+from environment import google_api
 import google.generativeai as genai
 
 genai.configure(api_key=google_api)
 
-# Set up the model
 generation_config = {
     "temperature": 1,
     "top_p": 1,
-    "top_k": 1,
+    "top_k": 32,
     "max_output_tokens": 4096,
 }
 
@@ -25,23 +18,17 @@ safety_settings = [
 ]
 
 model = genai.GenerativeModel(
-    model_name="gemini-pro",
+    model_name="gemini-pro-vision",
     generation_config=generation_config,
     safety_settings=safety_settings,
 )
-chat = None
 
 
-def reset():
-    global chat
-    chat = model.start_chat(history=[])
-    chat.send_message("Từ bây giờ bạn sẽ có tên là Trần Khánh Hân")
-
-
-reset()
-
-
-def pro(text, user):
-    ask_text = f"Tôi là {user}.\n{text}"
-    response = chat.send_message(ask_text)
+def pro_vision(image, text):
+    image_set = {"mime_type": "image/png", "data": image.getvalue()}
+    prompt_parts = [
+        text + "\n",
+        image_set,
+    ]
+    response = model.generate_content(prompt_parts)
     return response.text

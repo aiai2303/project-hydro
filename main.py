@@ -1,4 +1,4 @@
-from environ import api_id, api_hash, bot_token
+from environment import api_id, api_hash, bot_token
 from hydrogram import Client
 import os
 

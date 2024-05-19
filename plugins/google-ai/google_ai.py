@@ -1,6 +1,6 @@
 from hydrogram import Client, filters
 from hydrogram.enums import ChatAction
-from res import pro, pro_vision, reset
+from . import pro, pro_vision, reset
 
 
 @Client.on_message(filters.command("new"))
