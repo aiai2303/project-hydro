@@ -28,7 +28,7 @@ def schedule(c):
         text = [
             "<b>Vòng Quay Vận Mệnh</b>",
             "\n\n".join(ranks),
-            "__Ném `🎰` để tham gia nền văn minh này__",
+            "__Ném `🎰` để tham gia Vòng Quay Vận Mệnh__",
         ]
         text = "\n\n\n".join(text)
         msg = c.send_message("share_v2ray_file", text)
@@ -46,6 +46,12 @@ def schedule(c):
         db = Database()
         db.reset()
 
+    def new_day():
+        c.send_chat_action("share_v2ray_file", ChatAction.TYPING)
+        c.send_message(
+            "share_v2ray_file", "Ngày mới bắt đầu, hãy ném `🎰` để xác định vận mệnh..."
+        )
+
     vietnam_tz = pytz.timezone("Asia/Ho_Chi_Minh")
 
     scheduler = BackgroundScheduler()
@@ -53,4 +59,7 @@ def schedule(c):
     scheduler.add_job(ranking, "interval", minutes=30)
 
     scheduler.add_job(reset_rank, CronTrigger(hour=0, minute=0, timezone=vietnam_tz))
+
+    scheduler.add_job(new_day, CronTrigger(hour=5, minute=0, timezone=vietnam_tz))
+
     scheduler.start()

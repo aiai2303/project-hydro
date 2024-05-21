@@ -123,7 +123,7 @@ def get_dice_rank(c, m):
     text = [
         "<b>Bảng xếp hạng __Vòng Quay Vận Mệnh__</b>",
         "\n\n".join(ranks),
-        "__Ném `🎰` để tham gia nền văn minh này__",
+        "__Ném `🎰` để tham gia Vòng Quay Vận Mệnh__",
     ]
     text = "\n\n\n".join(text)
     m.reply(text, quote=True)
