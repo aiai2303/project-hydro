@@ -26,12 +26,12 @@ def punish(m):
 
 def already(m, point):
     temp = m.reply(
-        f"Hôm nay bạn đã thử vận may với cái này rồi, không thể thực hiện lại nữa, hãy chờ ngày mai hoặc thử cái khác.\n\nĐiểm của bạn là  **{point}**",
+        f"**{m.from_user.first_name}**, hôm nay bạn đã thử vận may với cái này rồi, không thể thực hiện lại nữa, hãy chờ ngày mai hoặc thử cái khác.\n\nĐiểm của bạn là  **{point}**",
         quote=True,
     )
+    m.delete()
     time.sleep(10)
     temp.delete()
-    m.delete()
 
 
 def update(m, db, model):
