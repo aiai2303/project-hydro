@@ -1,8 +1,11 @@
-hydrogram
+Hydrogram
 requests
 google-generativeai
-tgcrypto
+TgCrypto
 Flask
-gunicorn
+Gunicorn
 easygoogletranslate
 langdetect
+SQLAlchemy
+psycopg2
+apscheduler
