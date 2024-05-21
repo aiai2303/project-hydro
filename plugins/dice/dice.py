@@ -121,7 +121,7 @@ def get_dice_rank(c, m):
         users.append((name, point))
     ranks = prettier(users)
     text = [
-        "<b>Bảng xếp hạng 10 thành viên có vận may cao nhất</b>",
+        "<b>Bảng xếp hạng __Vòng Quay Vận Mệnh__</b>",
         "\n\n".join(ranks),
         "__Ném `🎰` để tham gia nền văn minh này__",
     ]

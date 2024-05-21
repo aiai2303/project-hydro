@@ -26,7 +26,7 @@ def schedule(c):
             users.append((user, point))
         ranks = prettier(users)
         text = [
-            "<b>Xếp hạng điểm may mắn</b>",
+            "<b>Vòng Quay Vận Mệnh</b>",
             "\n\n".join(ranks),
             "__Ném `🎰` để tham gia nền văn minh này__",
         ]
