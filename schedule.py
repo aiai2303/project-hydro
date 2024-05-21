@@ -28,7 +28,7 @@ def schedule(c):
         text = [
             "<b>Xếp hạng điểm may mắn</b>",
             "\n\n".join(ranks),
-            "__Ném `🎰` để tham gia bảng xếp hạng và thử độ may mắn.__",
+            "__Ném `🎰` để tham gia nền văn minh này__",
         ]
         text = "\n\n\n".join(text)
         msg = c.send_message("share_v2ray_file", text)
