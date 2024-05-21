@@ -512,15 +512,23 @@
         "documentation": {}
     },
     {
-        "label": "ranks_prettier",
-        "importPath": "plugins.ranking.util",
-        "description": "plugins.ranking.util",
+        "label": "prettier",
+        "importPath": "plugins.dice.util",
+        "description": "plugins.dice.util",
         "isExtraImport": true,
-        "detail": "plugins.ranking.util",
+        "detail": "plugins.dice.util",
         "documentation": {}
     },
     {
         "label": "Database",
+        "importPath": "plugins.dice.model",
+        "description": "plugins.dice.model",
+        "isExtraImport": true,
+        "detail": "plugins.dice.model",
+        "documentation": {}
+    },
+    {
+        "label": "Model64",
         "importPath": "plugins.dice.model",
         "description": "plugins.dice.model",
         "isExtraImport": true,
@@ -720,7 +728,7 @@
         "kind": 2,
         "importPath": "plugins.dice.dice",
         "description": "plugins.dice.dice",
-        "peekOfCode": "def already(m, point):\n    temp = m.reply(\n        f\"Hôm nay bạn đã thử vận may với cái này rồi, không thể thực hiện lại nữa, hãy chờ ngày mai hoặc thử cái khác.\\n\\nĐiểm của bạn là  **{point}**\",\n        quote=True,\n    )\n    time.sleep(10)\n    temp.delete()\n    m.delete()\ndef update(m, db, model):\n    db.update(",
+        "peekOfCode": "def already(m, point):\n    temp = m.reply(\n        f\"**{m.from_user.first_name}**, hôm nay bạn đã thử vận may với cái này rồi, không thể thực hiện lại nữa, hãy chờ ngày mai hoặc thử cái khác.\\n\\nĐiểm của bạn là  **{point}**\",\n        quote=True,\n    )\n    m.delete()\n    time.sleep(10)\n    temp.delete()\ndef update(m, db, model):\n    db.update(",
         "detail": "plugins.dice.dice",
         "documentation": {}
     },
@@ -999,7 +1007,7 @@
         "kind": 2,
         "importPath": "schedule",
         "description": "schedule",
-        "peekOfCode": "def schedule(c):\n    def ranking():\n        c.send_chat_action(\"share_v2ray_file\", ChatAction.TYPING)\n        db = DB()\n        result_list = db.daily_list()\n        users = []\n        for item in result_list:\n            if item.last_name:\n                name = item.first_name + \" \" + item.last_name\n            else:",
+        "peekOfCode": "def schedule(c):\n    def ranking():\n        c.send_chat_action(\"share_v2ray_file\", ChatAction.TYPING)\n        db = Database()\n        result_list = db.list(Model64)\n        users = []\n        for item in result_list:\n            if item.last_name:\n                name = item.first_name + \" \" + item.last_name\n            else:",
         "detail": "schedule",
         "documentation": {}
     },

@@ -6,15 +6,15 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.triggers.cron import CronTrigger
 from hydrogram.enums import ChatAction
 from plugins.ranking.model import DB
-from plugins.ranking.util import ranks_prettier
-from plugins.dice.model import Database
+from plugins.dice.util import prettier
+from plugins.dice.model import Database, Model64
 
 
 def schedule(c):
     def ranking():
         c.send_chat_action("share_v2ray_file", ChatAction.TYPING)
-        db = DB()
-        result_list = db.daily_list()
+        db = Database()
+        result_list = db.list(Model64)
         users = []
         for item in result_list:
             if item.last_name:
@@ -22,16 +22,15 @@ def schedule(c):
             else:
                 name = item.first_name
             user = name
-            exp = item.exp
-            level = item.level
-            users.append((user, exp, level))
-        ranks = ranks_prettier(users)
+            point = item.point
+            users.append((user, point))
+        ranks = prettier(users)
         text = [
-            "<b>Các thành viên đứng đầu bảng xếp hạng hôm nay</b>",
+            "<b>Xếp hạng điểm may mắn</b>",
             "\n\n".join(ranks),
         ]
         text = "\n\n\n".join(text)
-        msg = c.send_message("share_v2ray_file", text, disable_web_page_preview=True)
+        msg = c.send_message("share_v2ray_file", text)
         if os.getenv("PRE_MESSAGE_ID"):
             msg_id = os.getenv("PRE_MESSAGE_ID")
             try:
