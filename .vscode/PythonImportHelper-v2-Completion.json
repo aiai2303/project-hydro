@@ -747,7 +747,7 @@
         "kind": 2,
         "importPath": "plugins.dice.dice",
         "description": "plugins.dice.dice",
-        "peekOfCode": "def get_dice_rank(c, m):\n    m.reply_chat_action(ChatAction)\n    db = Database()\n    rows = db.list(Model64)\n    users = []\n    for row in rows:\n        if row.last_name:\n            name = row.first_name + \" \" + row.last_name\n        else:\n            name = row.first_name",
+        "peekOfCode": "def get_dice_rank(c, m):\n    m.reply_chat_action(ChatAction.TYPING)\n    db = Database()\n    rows = db.list(Model64)\n    users = []\n    for row in rows:\n        if row.last_name:\n            name = row.first_name + \" \" + row.last_name\n        else:\n            name = row.first_name",
         "detail": "plugins.dice.dice",
         "documentation": {}
     },

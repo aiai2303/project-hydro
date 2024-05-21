@@ -108,7 +108,7 @@ def roll_dice(c, m):
 
 @Client.on_message(filters.command("dice"))
 def get_dice_rank(c, m):
-    m.reply_chat_action(ChatAction)
+    m.reply_chat_action(ChatAction.TYPING)
     db = Database()
     rows = db.list(Model64)
     users = []
