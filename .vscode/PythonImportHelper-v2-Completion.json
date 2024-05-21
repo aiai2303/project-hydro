@@ -809,7 +809,7 @@
         "kind": 2,
         "importPath": "plugins.dice.util",
         "description": "plugins.dice.util",
-        "peekOfCode": "def prettier(user_rows):\n    ranks = []\n    emojis = [\"🎲\", \"🍀\", \"☘️\"]\n    sorted_users = sorted(user_rows, key=lambda x: x[1], reverse=True)\n    for i, row in enumerate(sorted_users[:10]):\n        rank = f\"{emojis[i]}\" if i < len(emojis) else f\"{i + 1}\"\n        user_info = [\n            f\"<b>{rank}) {row[0]}</b>\",\n            f\"(`{row[1]}`)\",\n        ]",
+        "peekOfCode": "def prettier(user_rows):\n    ranks = []\n    emojis = [\"👑\", \"🍀\", \"☘️\"]\n    sorted_users = sorted(user_rows, key=lambda x: x[1], reverse=True)\n    for i, row in enumerate(sorted_users[:10]):\n        rank = f\"{emojis[i]}\" if i < len(emojis) else f\"{i + 1}\"\n        user_info = [\n            f\"<b>{rank}) {row[0]}</b>\",\n            f\"(`{row[1]}`)\",\n        ]",
         "detail": "plugins.dice.util",
         "documentation": {}
     },

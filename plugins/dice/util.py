@@ -1,6 +1,6 @@
 def prettier(user_rows):
     ranks = []
-    emojis = ["🎲", "🍀", "☘️"]
+    emojis = ["👑", "🍀", "☘️"]
     sorted_users = sorted(user_rows, key=lambda x: x[1], reverse=True)
 
     for i, row in enumerate(sorted_users[:10]):
