@@ -11,7 +11,7 @@ from plugins.dice.model import Database, Model64
 
 
 def schedule(c):
-    def ranking():
+    def dice_rank():
         c.send_chat_action("share_v2ray_file", ChatAction.TYPING)
         db = Database()
         result_list = db.list(Model64)
@@ -56,7 +56,7 @@ def schedule(c):
 
     scheduler = BackgroundScheduler()
 
-    scheduler.add_job(ranking, "interval", minutes=30)
+    scheduler.add_job(dice_rank, "interval", minutes=30)
 
     scheduler.add_job(reset_rank, CronTrigger(hour=0, minute=0, timezone=vietnam_tz))
 

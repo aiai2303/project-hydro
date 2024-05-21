@@ -1007,7 +1007,7 @@
         "kind": 2,
         "importPath": "schedule",
         "description": "schedule",
-        "peekOfCode": "def schedule(c):\n    def ranking():\n        c.send_chat_action(\"share_v2ray_file\", ChatAction.TYPING)\n        db = Database()\n        result_list = db.list(Model64)\n        users = []\n        for item in result_list:\n            if item.last_name:\n                name = item.first_name + \" \" + item.last_name\n            else:",
+        "peekOfCode": "def schedule(c):\n    def dice_rank():\n        c.send_chat_action(\"share_v2ray_file\", ChatAction.TYPING)\n        db = Database()\n        result_list = db.list(Model64)\n        users = []\n        for item in result_list:\n            if item.last_name:\n                name = item.first_name + \" \" + item.last_name\n            else:",
         "detail": "schedule",
         "documentation": {}
     },
