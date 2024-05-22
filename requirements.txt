@@ -9,3 +9,4 @@ langdetect
 SQLAlchemy
 psycopg2
 apscheduler
+pytz
