@@ -1,5 +1,6 @@
 import random
 import time
+import pytz
 from datetime import datetime, timedelta
 from hydrogram import Client, filters
 from hydrogram.enums import ChatAction
@@ -9,14 +10,15 @@ from .util import prettier
 
 
 def punish(m):
-    mtime = random.randint(1, 1000)
     m.reply(
         f"**{m.from_user.first_name}** nhận được `{m.dice.value}` điểm, quá đen đủi cho ngày hôm nay. Hãy dành `{mtime}` phút cuộc đời để suy nghĩ về số phận.",
         quote=True,
     )
-    now = datetime.now()
-    delta = timedelta(minutes=mtime)
-    targ = now + delta
+    timezone = pytz.timezone('Asia/Ho_Chi_Minh')
+    now = datetime.now(timezone)
+    tomorrow = now + timedelta(days=1)
+    midnight_tomorrow = datetime(tomorrow.year, tomorrow.month, tomorrow.day, 0, 0, 0, tzinfo=timezone)
+    targ = midnight_tomorrow - now
     m.chat.restrict_member(
         m.from_user.id,
         ChatPermissions(can_send_messages=False),
