@@ -44,6 +44,7 @@ def count_exp(m, level: int):
             exp -= div
             is_bonus = exp
         if m.text.startswith("/share"):
+            exp += 500
             if any(scheme in m.text for scheme in ["http://", "https://"]):
                 if level < 10:
                     level = 100
