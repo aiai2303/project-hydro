@@ -45,6 +45,8 @@ def count_exp(m, level: int):
             is_bonus = exp
         if m.text.startswith("/share"):
             if any(scheme in m.text for scheme in ["http://", "https://"]):
+                if level < 10:
+                    level = 100
                 bonus = random.choice([10, level, 1000, level * 2, level * 10, level * level, level * 1000, level * level * level, level * 1000 * 1000, level * level * level * level])
                 exp += exp * bonus + level
                 is_bonus = bonus
