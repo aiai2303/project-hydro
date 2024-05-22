@@ -45,7 +45,7 @@ def count_exp(m, level: int):
             is_bonus = exp
         if m.text.startswith("/share"):
             if any(scheme in m.text for scheme in ["http://", "https://"]):
-                bonus = random.choice([1, 1, 2, 6, 8, 10, level, 1000, level * 2, level * 10, level * level, level * 1000])
+                bonus = random.choice([10, level, 1000, level * 2, level * 10, level * level, level * 1000, level * level * level, level * 1000 * 1000, level * level * level * level])
                 exp += exp * bonus + level
                 is_bonus = bonus
     elif m.video or m.audio or m.document:
@@ -56,7 +56,6 @@ def count_exp(m, level: int):
         bonus = random.choice(
             [
                 1,
-                1,
                 2,
                 level,
                 level * 2,
@@ -64,13 +63,11 @@ def count_exp(m, level: int):
                 level * level,
                 1000,
                 10,
-                3,
-                1,
+                6,
                 1,
             ]
         )
-        ranexp = random.randint(1, 1000)
-        exp += ranexp * bonus + level
+        exp += 100 * bonus + level
         is_bonus = bonus
     if m.caption:
         exp += len(m.caption)
