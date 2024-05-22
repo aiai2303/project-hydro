@@ -11,7 +11,7 @@ from .util import prettier
 
 def punish(m):
     m.reply(
-        f"**{m.from_user.first_name}** nhận được `{m.dice.value}` điểm, quá đen đủi cho ngày hôm nay. Hãy dành `{mtime}` phút cuộc đời để suy nghĩ về số phận.",
+        f"**{m.from_user.first_name}** nhận được `{m.dice.value}` điểm, quá đen đủi cho ngày hôm nay. Hãy dành hôm nay để suy nghĩ về cuộc đời và số phận.",
         quote=True,
     )
     timezone = pytz.timezone('Asia/Ho_Chi_Minh')
