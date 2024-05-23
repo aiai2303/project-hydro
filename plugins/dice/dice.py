@@ -17,8 +17,7 @@ def punish(m):
     timezone = pytz.timezone('Asia/Ho_Chi_Minh')
     now = datetime.now(timezone)
     tomorrow = now + timedelta(days=1)
-    midnight_tomorrow = datetime(tomorrow.year, tomorrow.month, tomorrow.day, 0, 0, 0, tzinfo=timezone)
-    targ = midnight_tomorrow - now
+    targ = datetime(tomorrow.year, tomorrow.month, tomorrow.day, 0, 0, 0, tzinfo=timezone)
     m.chat.restrict_member(
         m.from_user.id,
         ChatPermissions(can_send_messages=False),
